@@ -10,7 +10,7 @@ export default function ExtractFeature() {
   const [featureDescription, setFeatureDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<ExtractionResult | null>(null);
-  const [showChat, setShowChat] = useState(true);
+  const [showChat, setShowChat] = useState(false);
 
   const sessionId = params.sessionId as string;
 
