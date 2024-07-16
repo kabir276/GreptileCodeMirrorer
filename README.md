@@ -67,7 +67,7 @@ Follow these steps to set up and run the project locally:
 1. **Clone the repository**
 - run :
  ```
- git clone 
+ git clone https://github.com/kabir276/GreptileCodeMirrorer.git
  ```
 
 2. **Set up environment variables**
