@@ -12,6 +12,7 @@
     "@huggingface/inference": "^2.7.0",
     "@pinecone-database/pinecone": "^2.2.2",
     "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.0",
     "next": "14.2.5",
