@@ -59,7 +59,7 @@ export default function Home() {
               <input
                 type="text"
                 id="inspirationBranch"
-                placeholder="e.g. main"
+                placeholder="Branch Name"
                 value={inspirationBranch}
                 onChange={(e) => setInspirationBranch(e.target.value)}
                 className="w-full px-3 py-2 border rounded bg-[rgba(156,156,156,0.3)] border-[rgba(83,254,234,0.3)]"
@@ -86,7 +86,7 @@ export default function Home() {
               <input
                 type="text"
                 id="userBranch"
-                placeholder="e.g. main"
+                placeholder="Branch Name"
                 value={userBranch}
                 onChange={(e) => setUserBranch(e.target.value)}
                 className="w-full px-3 py-2 border rounded bg-[rgba(156,156,156,0.3)] border-[rgba(83,254,234,0.3)]"
