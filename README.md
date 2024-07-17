@@ -2,7 +2,7 @@
 
 ## Overview
 
-Code Mirrorer is an advanced code analysis and feature extraction tool that leverages AI and Large Language Models (LLMs) to help developers learn from and integrate features from ideal codebases into their own projects. This tool provides an interactive way to explore, understand, and adapt code while considering the specific context of the user's codebase.
+Code Mirrorer is an advanced code analysis and feature extraction tool that leverages Greptile AI and Large Language Models (LLMs) to help developers learn from and integrate features from ideal codebases into their own projects. This tool provides an interactive way to explore, understand, and adapt code while considering the specific context of the user's codebase.
 
 ## Technologies Used
 
