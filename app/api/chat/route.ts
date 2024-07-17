@@ -29,12 +29,7 @@ export async function POST(req: NextRequest) {
 
 
     const { idealRepo, userRepo, idealBranch, userBranch } = session;
-    const idealQuery = `
-Regarding the codebase ${idealRepo}:
-
-"${chatInput}"
-
-Provide a relevant response based on this codebase.`;
+    const idealQuery = `"provide a relevent response for ${chatInput}" `;
 
 
     const relevantChatHistory = await queryPineconeForRelevantHistory(sessionId, chatInput, userRepo);
@@ -43,13 +38,10 @@ Provide a relevant response based on this codebase.`;
     // const idealQuery = `Determine if the following prompt is related to the ideal codebase: "${chatInput}"`
     const idealResponse = await queryGreptile(idealRepo, idealQuery, idealBranch, idealrelevantChatHistory);
     const userQuery = `
-    Considering the codebase ${userRepo} and the following information:
-    
-    ${idealResponse.message}
-    
-    "${chatInput}"
-    
-    Provide a final response that is relevant to this codebase and the user's input.`;
+    reply to this user's input "${chatInput}"
+    using the info below if needed
+    response from the Ideal codebase: ${idealResponse.message}
+    `;
     // const userQuery = `response from the Ideal codebase: ${idealResponse.message}\n\n  reply to this now ${chatInput}`
     const userResponse = await queryGreptile(userRepo, userQuery, userBranch, relevantChatHistory);
 

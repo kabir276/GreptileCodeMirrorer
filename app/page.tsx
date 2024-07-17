@@ -4,9 +4,9 @@ import { submitRepositories } from "../utils/api";
 import { useRouter } from 'next/navigation';
 
 export default function Home() {
-  const [idealRepo, setidealRepo] = useState("");
+  const [idealRepo, setIdealRepo] = useState("");
   const [userRepo, setUserRepo] = useState("");
-  const [idealBranch, setidealBranch] = useState("");
+  const [idealBranch, setIdealBranch] = useState("");
   const [userBranch, setUserBranch] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -49,7 +49,7 @@ export default function Home() {
                 placeholder="GithubUserName/RepositoryName"
                 id="idealRepo"
                 value={idealRepo}
-                onChange={(e) => setidealRepo(e.target.value)}
+                onChange={(e) => setIdealRepo(e.target.value)}
                 className="w-full px-3 py-2 border rounded bg-[rgba(156,156,156,0.3)] border-[rgba(83,254,234,0.3)]"
                 required
               />
@@ -61,7 +61,7 @@ export default function Home() {
                 id="idealBranch"
                 placeholder="Branch Name"
                 value={idealBranch}
-                onChange={(e) => setidealBranch(e.target.value)}
+                onChange={(e) => setIdealBranch(e.target.value)}
                 className="w-full px-3 py-2 border rounded bg-[rgba(156,156,156,0.3)] border-[rgba(83,254,234,0.3)]"
                 required
               />

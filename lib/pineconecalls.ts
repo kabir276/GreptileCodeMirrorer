@@ -12,7 +12,7 @@ export async function upsertToPinecone(sessionId: string, message: string, repo:
       {
         id: `${sessionId}-${repo}-${messageCounter++}`,
         values: embedding,
-        metadata: { sessionId, repo }
+        metadata: { sessionId, repo,message }
       }
     ]);
   } catch (error) {
