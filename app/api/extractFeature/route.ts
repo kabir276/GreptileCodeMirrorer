@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Session not found' }, { status: 404 });
     }
 
-    const { inspirationRepo, userRepo, inspirationBranch, userBranch } = session;
+    const { idealRepo, userRepo, idealBranch, userBranch } = session;
 
     const extractionQuery = `
 Task: Extract and explain the code for the feature titled "${featureTitle}"
@@ -62,7 +62,7 @@ Please provide the following in your response:
 Please ensure the response is comprehensive, clear, and follows a logical structure for easy understanding and implementation.;
 `;
     
-    const extractedFeature = await queryGreptile(inspirationRepo, extractionQuery, inspirationBranch);
+    const extractedFeature = await queryGreptile(idealRepo, extractionQuery, idealBranch);
     const compatibilityQuery = `
     Task: Analyze the compatibility of the extracted feature with the codebase in ${userRepo}
     
@@ -169,7 +169,7 @@ Please ensure the response is comprehensive, clear, and follows a logical struct
 
     const combinedMessage = `${extractedFeature.message} ${implementationSuggestions.message}`;
     await upsertToPinecone(sessionId, combinedMessage,userRepo);
-    await upsertToPinecone(sessionId, extractedFeature.message,inspirationRepo);
+    await upsertToPinecone(sessionId, extractedFeature.message,idealRepo);
 
 
 

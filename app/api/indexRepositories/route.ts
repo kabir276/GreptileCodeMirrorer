@@ -7,24 +7,24 @@ import { MongoError } from 'mongodb';
 import { dbConnect } from '@/lib/mongodb';
 
 interface IndexRepositoriesRequest {
-  inspirationRepo: string;
+  idealRepo: string;
   userRepo: string;
-  inspirationBranch: string;
+  idealBranch: string;
   userBranch: string;
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body: IndexRepositoriesRequest = await req.json();
-    const { inspirationRepo, userRepo, inspirationBranch, userBranch } = body;
+    const { idealRepo, userRepo, idealBranch, userBranch } = body;
 
     await dbConnect();
 
     
     const existingSession = await Session.findOne({
-      inspirationRepo,
+      idealRepo,
       userRepo,
-      inspirationBranch,
+      idealBranch,
       userBranch,
     });
 
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     }
 
     const indexingPromises = [
-      indexRepository(inspirationRepo, inspirationBranch),
+      indexRepository(idealRepo, idealBranch),
       indexRepository(userRepo, userBranch),
     ];
 
@@ -47,9 +47,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Failed to index repositories' }, { status: 500 });
     }
     const session = new Session({
-      inspirationRepo,
+      idealRepo,
       userRepo,
-      inspirationBranch,
+      idealBranch,
       userBranch,
     });
 
@@ -59,9 +59,9 @@ export async function POST(req: NextRequest) {
       if (saveError instanceof MongoError && saveError.code === 11000) {
       
         const concurrentSession = await Session.findOne({
-          inspirationRepo,
+          idealRepo,
           userRepo,
-          inspirationBranch,
+          idealBranch,
           userBranch,
         });
         if (concurrentSession) {

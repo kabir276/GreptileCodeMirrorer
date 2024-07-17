@@ -14,9 +14,9 @@ export interface ExtractionResult {
 }
 
 export async function submitRepositories(
-    inspirationRepo: string,
+    idealRepo: string,
     userRepo: string,
-    inspirationBranch: string,
+    idealBranch: string,
     userBranch: string
 ) {
     try {
@@ -26,9 +26,9 @@ export async function submitRepositories(
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                inspirationRepo,
+                idealRepo,
                 userRepo,
-                inspirationBranch,
+                idealBranch,
                 userBranch,
             }),
         });

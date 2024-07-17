@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 const SessionSchema = new mongoose.Schema({
-  inspirationRepo: String,
+  idealRepo: String,
   userRepo: String,
-  inspirationBranch: String,
+  idealBranch: String,
   userBranch: String,
   createdAt: { type: Date, default: Date.now },
   extractedFeature: String,

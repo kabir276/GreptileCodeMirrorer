@@ -28,9 +28,9 @@ export async function POST(req: NextRequest) {
     }
 
 
-    const { inspirationRepo, userRepo, inspirationBranch, userBranch } = session;
+    const { idealRepo, userRepo, idealBranch, userBranch } = session;
     const idealQuery = `
-Regarding the codebase ${inspirationRepo}:
+Regarding the codebase ${idealRepo}:
 
 "${chatInput}"
 
@@ -38,10 +38,10 @@ Provide a relevant response based on this codebase.`;
 
 
     const relevantChatHistory = await queryPineconeForRelevantHistory(sessionId, chatInput, userRepo);
-    const idealrelevantChatHistory = await queryPineconeForRelevantHistory(sessionId, chatInput, inspirationRepo);
+    const idealrelevantChatHistory = await queryPineconeForRelevantHistory(sessionId, chatInput, idealRepo);
 
     // const idealQuery = `Determine if the following prompt is related to the ideal codebase: "${chatInput}"`
-    const idealResponse = await queryGreptile(inspirationRepo, idealQuery, inspirationBranch, idealrelevantChatHistory);
+    const idealResponse = await queryGreptile(idealRepo, idealQuery, idealBranch, idealrelevantChatHistory);
     const userQuery = `
     Considering the codebase ${userRepo} and the following information:
     
@@ -56,7 +56,7 @@ Provide a relevant response based on this codebase.`;
     const updatedChatHistory = [...relevantChatHistory, chatInput, userResponse.message];
 
     await upsertToPinecone(sessionId, userResponse.message,userRepo);
-    await upsertToPinecone(sessionId, idealResponse.message,inspirationRepo);
+    await upsertToPinecone(sessionId, idealResponse.message,idealRepo);
 
     return NextResponse.json({
       message: userResponse.message,

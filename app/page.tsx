@@ -4,9 +4,9 @@ import { submitRepositories } from "../utils/api";
 import { useRouter } from 'next/navigation';
 
 export default function Home() {
-  const [inspirationRepo, setInspirationRepo] = useState("");
+  const [idealRepo, setidealRepo] = useState("");
   const [userRepo, setUserRepo] = useState("");
-  const [inspirationBranch, setInspirationBranch] = useState("");
+  const [idealBranch, setidealBranch] = useState("");
   const [userBranch, setUserBranch] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -17,9 +17,9 @@ export default function Home() {
 
     try {
       const result = await submitRepositories(
-        inspirationRepo,
+        idealRepo,
         userRepo,
-        inspirationBranch,
+        idealBranch,
         userBranch
       );
       console.log(result);
@@ -40,16 +40,16 @@ export default function Home() {
         Clone and Implement Features from Any Public Repository
       </h2>      <div className="flex flex-col items-center justify-center p-4">
         <form onSubmit={handleSubmit} className="w-full max-w-lg">
-          <label htmlFor="inspirationRepo" className="block mb-2">Inspiration Repository:</label>
+          <label htmlFor="idealRepo" className="block mb-2">Ideal Repository:</label>
 
           <div className="flex flex-row gap-5 justify-center">
             <div className="mb-4 w-[70%]">
               <input
                 type="text"
                 placeholder="GithubUserName/RepositoryName"
-                id="inspirationRepo"
-                value={inspirationRepo}
-                onChange={(e) => setInspirationRepo(e.target.value)}
+                id="idealRepo"
+                value={idealRepo}
+                onChange={(e) => setidealRepo(e.target.value)}
                 className="w-full px-3 py-2 border rounded bg-[rgba(156,156,156,0.3)] border-[rgba(83,254,234,0.3)]"
                 required
               />
@@ -58,16 +58,16 @@ export default function Home() {
 
               <input
                 type="text"
-                id="inspirationBranch"
+                id="idealBranch"
                 placeholder="Branch Name"
-                value={inspirationBranch}
-                onChange={(e) => setInspirationBranch(e.target.value)}
+                value={idealBranch}
+                onChange={(e) => setidealBranch(e.target.value)}
                 className="w-full px-3 py-2 border rounded bg-[rgba(156,156,156,0.3)] border-[rgba(83,254,234,0.3)]"
                 required
               />
             </div>
           </div>
-          <label htmlFor="inspirationRepo" className="block mb-2">Your Repository:</label>
+          <label htmlFor="idealRepo" className="block mb-2">Your Repository:</label>
 
           <div className="flex flex-row gap-5 justify-center">
             <div className="mb-4 w-[70%]">

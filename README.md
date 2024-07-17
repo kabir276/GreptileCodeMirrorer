@@ -2,7 +2,7 @@
 
 ## Overview
 
-Code Mirrorer is an advanced code analysis and feature extraction tool that leverages AI and Large Language Models (LLMs) to help developers learn from and integrate features from inspiration codebases into their own projects. This tool provides an interactive way to explore, understand, and adapt code while considering the specific context of the user's codebase.
+Code Mirrorer is an advanced code analysis and feature extraction tool that leverages AI and Large Language Models (LLMs) to help developers learn from and integrate features from ideal codebases into their own projects. This tool provides an interactive way to explore, understand, and adapt code while considering the specific context of the user's codebase.
 
 ## Technologies Used
 
@@ -16,11 +16,11 @@ Code Mirrorer is an advanced code analysis and feature extraction tool that leve
 ## Key Features
 
 1. **Repository Indexing**
-   - Index two GitHub repositories: an "inspiration" repository and the user's repository
+   - Index two GitHub repositories: an "ideal" repository and the user's repository
    - Supports specifying different branches for each repository
 
 2. **Feature Extraction**
-   - Extract specific features from the inspiration repository based on user input
+   - Extract specific features from the ideal repository based on user input
    - Provide detailed explanations of how the extracted code works
 
 3. **Compatibility Analysis**
@@ -33,18 +33,18 @@ Code Mirrorer is an advanced code analysis and feature extraction tool that leve
 
 5. **Interactive Chat Interface**
    - Allow users to ask questions and seek clarifications about extracted features, compatibility, or implementations
-   - Provide context-aware responses using both inspiration and user repositories
+   - Provide context-aware responses using both ideal and user repositories
 
 6. **Persistent Sessions**
    - Maintain user sessions to allow returning to previous work
 
 ## How It Works
 
-1. **Repository Submission**: Users submit links to two GitHub repositories - an inspiration repo and their own repo.
+1. **Repository Submission**: Users submit links to two GitHub repositories - an ideal repo and their own repo.
 
 2. **Indexing**: The system indexes both repositories, making their contents searchable and analyzable.
 
-3. **Feature Extraction**: Users can request to extract a specific feature by providing a title and description. The system uses AI to locate and extract relevant code from the inspiration repository.
+3. **Feature Extraction**: Users can request to extract a specific feature by providing a title and description. The system uses AI to locate and extract relevant code from the ideal repository.
 
 4. **Compatibility Check**: The extracted feature is analyzed for compatibility with the user's repository. This includes a compatibility score and detailed explanation of potential issues.
 
