@@ -47,7 +47,7 @@ export default function Chat({ sessionId }: { sessionId: string }) {
         return <p key={index} className="mb-2  p-4 text-left" dangerouslySetInnerHTML={{ __html: formattedPart }} />;
       } else {
         return (
-          <pre key={index} className="bg-[rgba(156,156,156,0.3)]  border border-[rgba(83,254,234,0.3)]  text-left text-[#d8e6e1] p-3 rounded mb-2 overflow-x-auto">
+          <pre key={index} className="bg-[rgba(156,156,156,0.3)]  border border-[rgba(83,254,234,0.3)] w-auto max-w-[55rem]  text-left text-[#d8e6e1] p-3 rounded mb-2 overflow-x-auto">
             <code>{part}</code>
           </pre>
         );
@@ -61,7 +61,7 @@ export default function Chat({ sessionId }: { sessionId: string }) {
       <div className="bg-[rgba(156,156,156,0.3)]  border-[rgba(83,254,234,0.15)] border w-[70%] m-auto flex overflow-hidden p-8 rounded  max-h-auto min-h-32 flex-col">
         {messages.map((message, index) => (
           <div key={index} className={`mb-4 ${message.sender === 'user' ? 'self-end' : 'self-start'}`}>
-            <div className={`p-2  rounded-lg ${message.sender === 'user' ? ' bg-[rgba(156,156,156,0.3)]' : 'text-[#eae8e8] px-6 w-[50%] bg-[rgba(156,156,156,0.3)]'}`}>
+            <div className={`p-2  rounded-lg ${message.sender === 'user' ? ' bg-[rgba(229,230,229,0.3)] border border-[#c3c3c3]' : 'text-[#eae8e8] px-6 w-auto bg-[rgba(156,156,156,0.3)]'}`}>
               {formatMessage(message.content)}
             </div>
           </div>

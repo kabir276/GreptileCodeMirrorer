@@ -49,7 +49,7 @@ export default function ExtractFeature() {
         return <p key={index} className="mb-2 p-4 px-8 text-left" dangerouslySetInnerHTML={{ __html: formattedPart }} />;
       } else {
         return (
-          <pre key={index} className="bg-[rgba(156,156,156,0.3)]  border border-[rgba(255,255,255,0.88)] px-8 text-left text-[#c3c3c3] p-3 rounded mb-2 overflow-x-auto">
+          <pre key={index} className="bg-[rgba(156,156,156,0.3)]  border border-[rgba(83,254,234,0.3)] px-8 text-left text-[#c3c3c3] p-3 rounded mb-2 overflow-x-auto">
             <code>{part}</code>
           </pre>
         );
