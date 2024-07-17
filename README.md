@@ -60,6 +60,33 @@ Code Mirrorer is an advanced code analysis and feature extraction tool that leve
 - **Code Analysis**: Greptile is employed for in-depth code analysis and query processing
 - **Text Embedding**: Hugging Face's BAAI/bge-m3 model is used to generate embeddings for storing text in the vector database
 
+
+## Technical Impressiveness
+
+Code Mirrorer showcases several technically impressive features:
+
+1. **Intelligent Chat History Management**: 
+   We implemented a sophisticated chat history system using Pinecone, a vector database. This allows for efficient storage and retrieval of context-relevant information, enhancing the AI's ability to provide coherent and contextually appropriate responses over extended conversations.
+
+2. **Advanced Prompt Engineering**: 
+   To improve the relevance and quality of AI-generated responses, we developed a series of carefully crafted prompts. These prompts are designed to guide the AI in providing appropriate answers while maintaining flexibility for a wide range of queries. This required multiple iterations and fine-tuning to balance specificity with generality.
+
+3. **Cross-Repository Feature Extraction**: 
+   The system's ability to extract features from one repository and analyze their compatibility with another repository presented unique challenges. We developed algorithms to not only identify relevant code sections but also to assess their fit within a different codebase context.
+
+4. **Dynamic Code Analysis**: 
+   Leveraging the Greptile API, we implemented real-time code analysis capabilities. This allows for on-the-fly assessment of code compatibility and generation of implementation suggestions, pushing the boundaries of what's possible with current code analysis tools.
+
+5. **Scalable Architecture**: 
+   The application is designed with scalability in mind, using Next.js for efficient server-side rendering and API routes. This architecture allows for handling multiple user sessions concurrently while maintaining performance.
+
+While these features demonstrate the technical depth of Code Mirrorer, it's worth noting that the system is still in development. Some aspects, particularly the chat functionality and prompt engineering, are continually being refined. We've aimed to create a flexible system that can adapt to various use cases, but users should be aware that results may vary depending on the specific repositories and queries involved.
+
+
+## AI Tools Used in Development
+
+1. Claude & Chatgpt: Used for brainstorming ideas, troubleshooting, and refining prompts.
+
 ## Getting Started
 
 Follow these steps to set up and run the project locally:
@@ -92,5 +119,4 @@ Open your browser and navigate to `http://localhost:3000`
 The application should now be running on your local machine. You can start using CodeCompare by submitting repository links and exploring its features.
 
 Note: Ensure you have npm installed on your system before starting these steps.
-
 
