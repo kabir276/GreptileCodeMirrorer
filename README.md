@@ -1,5 +1,8 @@
 # Code Mirrorer: AI-Powered Code Analysis and Feature Extraction Tool
 
+  ![loom-video](https://github.com/user-attachments/assets/d6111e22-385b-4cea-bea7-e15d15a6d9e7)
+
+
 ## Overview
 
 Code Mirrorer is an advanced code analysis and feature extraction tool that leverages Greptile AI and Large Language Models (LLMs) to help developers learn from and integrate features from ideal codebases into their own projects. This tool provides an interactive way to explore, understand, and adapt code while considering the specific context of the user's codebase.
