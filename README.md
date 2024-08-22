@@ -1,6 +1,7 @@
 # Code Mirrorer: AI-Powered Code Analysis and Feature Extraction Tool
 
-  ![loom-video](https://github.com/user-attachments/assets/d6111e22-385b-4cea-bea7-e15d15a6d9e7)
+[![loom-video](https://github.com/user-attachments/assets/e62a73d5-c376-4b60-8df9-b1fe3a5c6d6b)](https://www.loom.com/share/c0c12722307d485192c866bdd8e0d152?sid=ac4c50e8-6ab9-444c-8741-99fd236b0437)
+
 
 
 ## Overview
